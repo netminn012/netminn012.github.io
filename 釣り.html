@@ -1,40 +1,59 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <title>YOU ARE RICKROLLED!!!</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+        }
+
+        #player {
+            width: 640px;
+            height: 390px;
+        }
+    </style>
 </head>
+
 <body>
+    <h1>YOU ARE RICKROLLED!!!</h1>
     <div id="player"></div>
 
     <script>
-      // YouTubeのプレーヤーAPIを非同期に読み込む
-      var tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-      var player;
-      function onYouTubeIframeAPIReady() {
-        player = new YT.Player('player', {
-          height: '390',
-          width: '640',
-          videoId: 'dQw4w9WgXcQ',
-          playerVars: {
-            'controls': 0,
-            'showinfo': 0,
-            'rel': 0,
-            'loop': 1
-          },
-          events: {
-            'onReady': onPlayerReady
-          }
-        });
-      }
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '730',
+                width: '1280',
+                videoId: 'dQw4w9WgXcQ',
+                playerVars: {
+                    'controls': 0,
+                    'showinfo': 0,
+                    'rel': 0,
+                    'loop': 1
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
 
-      function onPlayerReady(event) {
-        event.target.playVideo();
-      }
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
     </script>
+    <p><a href="/">戻る</a></p>
 </body>
+
 </html>
