@@ -71,17 +71,6 @@
           .catch(error => console.error('Error:', error));
   }
 
-  // カウンターリセットボタンのクリックハンドラ
-  document.getElementById('resetButton').addEventListener('click', function() {
-      fetch('https://script.google.com/macros/s/AKfycbwRvT-Ky32JRPWVbNmHAk4FU5a0d_zIHw227nk1WZm2xBDEXcOQQuuVWjuSo9ILdA5U/exec')
-          .then(response => response.text())
-          .then(data => {
-              alert(data);
-              getCounter(); // カウンターをリセットした後、値を再取得して表示する
-          })
-          .catch(error => console.error('Error:', error));
-  });
-
   // ページ読み込み時にカウンターの値を取得して表示する
   window.onload = function() {
       getCounter();
