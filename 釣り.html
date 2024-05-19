@@ -17,7 +17,7 @@
 </head>
 <body>
   <h1>You are rickrolled.</h1>
-  <h1>あなたは<span id="counter">読み込み中...</span> 番目の被害者です。</h1>
+  <h1>累計rickrolled者数:<span id="counter">Now Loading...</span>人</h1>
   <img src="/assets/potter.webp" alt="釣られたな、ポッター">
   <div id="player"></div>
   <img src="/assets/potter.webp" alt="釣られたな、ポッター">
@@ -61,17 +61,33 @@
   </script>
 
 <script>
-    // counter.phpにリクエストを送る
-    fetch('counter.php')
-      .then(response => response.text()).then(data => {
-        // 取得したデータをカウンターに表示
-        document.getElementById('counter').innerText = data;
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        document.getElementById('counter').innerText = 'エラー';
-      });
+  // カウンターの値を取得する関数
+  function getCounter() {
+      fetch('https://script.google.com/macros/s/AKfycbwRvT-Ky32JRPWVbNmHAk4FU5a0d_zIHw227nk1WZm2xBDEXcOQQuuVWjuSo9ILdA5U/exec')
+          .then(response => response.text())
+          .then(data => {
+              document.getElementById('counter').innerText = data;
+          })
+          .catch(error => console.error('Error:', error));
+  }
+
+  // カウンターリセットボタンのクリックハンドラ
+  document.getElementById('resetButton').addEventListener('click', function() {
+      fetch('https://script.google.com/macros/s/AKfycbwRvT-Ky32JRPWVbNmHAk4FU5a0d_zIHw227nk1WZm2xBDEXcOQQuuVWjuSo9ILdA5U/exec')
+          .then(response => response.text())
+          .then(data => {
+              alert(data);
+              getCounter(); // カウンターをリセットした後、値を再取得して表示する
+          })
+          .catch(error => console.error('Error:', error));
+  });
+
+  // ページ読み込み時にカウンターの値を取得して表示する
+  window.onload = function() {
+      getCounter();
+  };
 </script>
+</body>
 <a href="/" target="_blank">powered by netminn012</a>
 </body>
 
