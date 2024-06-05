@@ -1,92 +1,39 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K23D8L8T8Z"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'G-K23D8L8T8Z');
-    </script>
     <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>netminn012のホームページ</title>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            body {
-                background-color: #000000;
-                /* 黒系の背景色に変更 */
-                color: #FFFFFF;
-            }
-
-            header {
-                background-color: #333333;
-                /* 黒系のヘッダー色に変更 */
-                color: #FFFFFF;
-            }
-
-            nav a {
-                color: #FFFFFF;
-                /* 黒系のリンク色に変更 */
-            }
-
-            section h2 {
-                color: #FFFFFF;
-                /* 黒系の見出し色に変更 */
-            }
-
-            footer {
-                background-color: #333333;
-                /* 黒系のフッター色に変更 */
-                color: #FFFFFF;
-            }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>私のSNSリンク集</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-
 <body>
     <header>
-        <h1>netminn012のホームページ</h1>
-        <p>Discoedや旧Twitter、Scratchなどにいるただのネット民でーす</p>
+        <nav>
+            <ul>
+                <li><a href="#home">ホーム</a></li>
+                <li><a href="#about">私について</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <nav>
-        <a href="https://discord.gg/grHTbCQTVr" target="_blank">Discord鯖</a>
-        <a href="https://discord.com/users/1133996291349827584" target="_blank">Discord(メイン)</a>
-        <a href="https://discord.com/users/1184079519896838234" target="_blank">Discord(サブ)</a>
-        <a href="https://twitter.com/netminn012" target="_blank">Twitter</a>
-        <a href="https://scratch.mit.edu/users/netminn012/" target="_blank">Scratch(メイン)</a>
-        <a href="https://scratch.mit.edu/users/subminn012/" target="_blank">Scratch(サブ)</a>
-        <a href="https://github.com/netminn012" target="_blank">GitHub</a>
-        <a href="https://www.youtube.com/@netminn012" target="_blank">YouTube</a>
-        <a href="https://note.com/netminn012" target="_blank">note</a>
-        <a href="https://qiita.com/netminn012" target="_blank">Qiita</a>
-        <a href="/釣り.html" target="_blank">何が出るかな</a>
-    </nav>
-
-    <section>
-        <h2>About</h2>
-        <p>ホームページ改修しました(それだけ)</p>
-    </section>
-
-    <section>
-        <h2>プライバシーとか</h2>
-        <p>アクセス数の取得などにGoogleアナリティクスを使用しています。 もしGoogleに個人情報を収集されたくない場合は、JavaScriptを無効化してください。</p>
-    </section>
-
-    <section>
-        <h2>ソースコード</h2>
-        <p>Do you need source code? If you need source code,  <a href="https://github.com/netminn012/netminn012.github.io" target="_blank">CLICK HERE!</a></p>
-    </section>
-
+    <div class="banner">
+        <img src="banner-image.jpg" alt="バナー画像">
+    </div>
+    <main>
+        <section class="sns-links" id="home">
+            <h2>フォローしてください！</h2>
+            <ul>
+                <li><a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a href="https://www.facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                <li><a href="https://www.instagram.com/yourprofile" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+                <li><a href="https://www.youtube.com/c/yourchannel" target="_blank"><i class="fab fa-youtube"></i> YouTube</a></li>
+            </ul>
+        </section>
+    </main>
     <footer>
-        &copy; 2024 netminn012 All Rights Reserved.
-         <a href="/konngyo.mp3" target="_blank">コンギョ</a>
+        <p>&copy; 2024 私の名前</p>
     </footer>
 </body>
-
 </html>
