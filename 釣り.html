@@ -2,22 +2,13 @@
 <html lang="ja">
 
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BYNN7ZQNFW"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-BYNN7ZQNFW');
-  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YOU ARE RICKROLLED!!!</title>
 </head>
+
 <body>
   <h1>You are rickrolled.</h1>
-  <h1>累計rickrolled者数:<span id="counter">Now Loading...</span>人</h1>
   <img src="/assets/potter.webp" alt="釣られたな、ポッター">
   <div id="player"></div>
   <img src="/assets/potter.webp" alt="釣られたな、ポッター">
@@ -59,25 +50,7 @@
       event.target.playVideo();
     }
   </script>
-
-<script>
-  // カウンターの値を取得する関数
-  function getCounter() {
-      fetch('https://script.google.com/macros/s/AKfycbwRvT-Ky32JRPWVbNmHAk4FU5a0d_zIHw227nk1WZm2xBDEXcOQQuuVWjuSo9ILdA5U/exec')
-          .then(response => response.text())
-          .then(data => {
-              document.getElementById('counter').innerText = data;
-          })
-          .catch(error => console.error('Error:', error));
-  }
-
-  // ページ読み込み時にカウンターの値を取得して表示する
-  window.onload = function() {
-      getCounter();
-  };
-</script>
-</body>
-<a href="/" target="_blank">powered by netminn012</a>
+  <a href="/" target="_blank">powered by netminn012</a>
 </body>
 
 </html>
