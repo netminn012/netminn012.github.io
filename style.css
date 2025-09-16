@@ -1,0 +1,34 @@
+body {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000000;
+        /* 黒系の背景色に変更 */
+        color: #FFFFFF;
+    }
+
+    header {
+        background-color: #333333;
+        /* 黒系のヘッダー色に変更 */
+        color: #FFFFFF;
+    }
+
+    nav a {
+        color: #FFFFFF;
+        /* 黒系のリンク色に変更 */
+    }
+
+    section h2 {
+        color: #FFFFFF;
+        /* 黒系の見出し色に変更 */
+    }
+
+    footer {
+        background-color: #333333;
+        /* 黒系のフッター色に変更 */
+        color: #FFFFFF;
+    }
+}
