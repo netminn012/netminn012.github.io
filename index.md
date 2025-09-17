@@ -11,6 +11,15 @@ title: ホーム
 <section class="mb-5" data-aos="fade-up" data-aos-delay="100">
     <h2 class="h3 mb-4">お知らせ</h2>
     <div class="news-grid">
+    <div class="card bg-secondary text-light" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card-body">
+                <h5 class="card-title">サイトの大規模改修</h5>
+                <p class="card-text">2025年9月17日: 大規模な改修。ブログの追加、デザインのモダン化。だいぶ改善されました
+                <del>(古いブラウザで見れなくなったのはお察し下さい)</del>
+                </p>
+                <small class="text-muted">2025年9月17日</small>
+            </div>
+        </div>
         <div class="card bg-secondary text-light" data-aos="zoom-in" data-aos-delay="200">
             <div class="card-body">
                 <h5 class="card-title">ドメイン移管完了</h5>
@@ -26,11 +35,6 @@ title: ホーム
             </div>
         </div>
         <div class="card bg-secondary text-light" data-aos="zoom-in" data-aos-delay="400">
-            <div class="card-body">
-                <h5 class="card-title">アナリティクス変更</h5>
-                <p class="card-text">2025年1月24日: Googleアナリティクスをやめた。代わりにcloudflareのアナリティクスに変更。</p>
-                <small class="text-muted">2025年1月24日</small>
-            </div>
         </div>
         <div class="card bg-secondary text-light" data-aos="zoom-in" data-aos-delay="500">
             <div class="card-body">
@@ -70,23 +74,14 @@ title: ホーム
                 </div>
             </div>
         </div>
-        <div class="col-lg-4 mt-3 mt-lg-0">
-            <div class="card bg-secondary text-light h-100">
-                <div class="card-body d-flex align-items-center justify-content-center">
-                    <div class="text-center">
-                        <i class="fab fa-discord fa-5x mb-3 text-primary"></i>
-                        <h6 class="card-title">活発なコミュニティ</h6>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
+</div>
     <div class="mt-4">
-        <iframe src="https://canary.discord.com/widget?id=1133998097597476915&theme=dark" 
-                width="100%" 
-                class="discord-widget" 
-                allowtransparency="true" 
-                frameborder="0" 
+        <iframe src="https://canary.discord.com/widget?id=1133998097597476915&theme=dark"
+                width="100%"
+                class="discord-widget"
+                allowtransparency="true"
+                frameborder="0"
                 sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
         </iframe>
     </div>
@@ -99,16 +94,12 @@ title: ホーム
             <div class="card bg-secondary text-light h-100">
                 <div class="card-body">
                     <h5 class="card-title">サイトについて</h5>
-                    <p class="card-text">ホームページ改修しました(それだけ)</p>
-                    <div class="mt-auto">
-                        <span class="badge bg-primary">軽量設計</span>
-                        <span class="badge bg-success">レスポンシブ</span>
-                    </div>
+                    <p class="card-text">ブログの導入とかしてだいぶ改善しました。(古いブラウザで見れなくなったのはお察しください)</p>
                 </div>
             </div>
         </section>
     </div>
-    
+
     <div class="col-lg-6 mb-4">
         <section data-aos="fade-up" data-aos-delay="1000">
             <h2 class="h3 mb-4">プライバシーとか</h2>
@@ -116,9 +107,7 @@ title: ホーム
                 <div class="card-body">
                     <h5 class="card-title">データ収集について</h5>
                     <p class="card-text">cloudflareのアナリティクスを使用しています。Googleアナリティクスは個人情報抜く53だからやめた</p>
-                    <div class="mt-auto">
-                        <span class="badge bg-warning">プライバシー重視</span>
-                    </div>
+
                 </div>
             </div>
         </section>
