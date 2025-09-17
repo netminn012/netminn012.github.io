@@ -6,16 +6,19 @@ body {
     line-height: 1.6;
 }
 
+/* ナビゲーションバー */
 .navbar {
     background-color: #333333 !important;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+/* カードコンポーネント */
 .card {
     background-color: #333333 !important;
     border: 1px solid #555555;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* カードの高さを統一 */
 }
 
 .card:hover {
@@ -25,57 +28,254 @@ body {
 
 .card-body {
     color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
+/* ボタン */
 .btn {
     margin: 0.25rem;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .btn:hover {
     transform: scale(1.05);
 }
 
+/* iframe */
 iframe {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
+/* コンテナ最大幅の調整 */
+.container {
+    max-width: 1200px;
+}
+
+/* ヘッダー調整 */
+.display-4 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 1.5rem;
+}
+
+.lead {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+}
+
+/* お知らせセクションのグリッド改善 */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Discord Widgetの調整 */
+.discord-widget {
+    min-height: 400px;
+}
+
+/* スマートフォン向け (320px - 767px) */
+@media (max-width: 767px) {
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
     .display-4 {
-        font-size: 2.5rem;
+        font-size: 2rem;
+    }
+    
+    .lead {
+        font-size: 1rem;
+    }
+    
+    .navbar-nav {
+        text-align: center;
+    }
+    
+    .discord-widget {
+        min-height: 300px;
+    }
+    
+    /* ナビゲーションリンクを2列に */
+    .navbar-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.5rem;
+        width: 100%;
     }
 }
 
+/* タブレット向け (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        max-width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    .display-4 {
+        font-size: 3rem;
+    }
+    
+    /* お知らせを2列に */
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* ナビゲーションの調整 */
+    .navbar-nav .nav-item {
+        margin: 0 0.25rem;
+    }
+    
+    .navbar-nav .nav-link {
+        font-size: 0.9rem;
+        padding: 0.375rem 0.5rem;
+    }
+    
+    /* Discord Widget調整 */
+    .discord-widget {
+        min-height: 450px;
+    }
+    
+    /* カードのpadding調整 */
+    .card-body {
+        padding: 1.25rem;
+    }
+}
+
+/* デスクトップ向け (1024px以上) */
+@media (min-width: 1024px) {
+    .container {
+        max-width: 1200px;
+    }
+    
+    .display-4 {
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .lead {
+        font-size: 1.5rem;
+    }
+    
+    /* お知らせを3列に */
+    .news-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+    
+    /* セクションマージンの調整 */
+    .mb-5 {
+        margin-bottom: 4rem !important;
+    }
+    
+    /* ナビゲーションの間隔調整 */
+    .navbar-nav .nav-item {
+        margin: 0 0.5rem;
+    }
+    
+    /* Discord Widget最大化 */
+    .discord-widget {
+        min-height: 500px;
+    }
+    
+    /* カードホバー効果強化 */
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+}
+
+/* 大型デスクトップ向け (1440px以上) */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+    
+    .display-4 {
+        font-size: 4rem;
+    }
+    
+    /* さらに大きな画面では4列に */
+    .news-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* セクション間の余白を広げる */
+    .mb-5 {
+        margin-bottom: 5rem !important;
+    }
+}
+
+/* 超ワイド画面向け (1920px以上) */
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    }
+    
+    /* コンテンツを中央により集約 */
+    .row {
+        justify-content: center;
+    }
+}
+
+/* ダークテーマ対応 */
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #000000;
-        /* 黒系の背景色に変更 */
         color: #FFFFFF;
     }
 
-    header {
-        background-color: #333333;
-        /* 黒系のヘッダー色に変更 */
-        color: #FFFFFF;
+    .navbar {
+        background-color: #333333 !important;
+    }
+    
+    .card {
+        background-color: #333333 !important;
+        border-color: #555555;
     }
 
-    nav a {
+    .card-body {
         color: #FFFFFF;
-        /* 黒系のリンク色に変更 */
-    }
-
-    section h2 {
-        color: #FFFFFF;
-        /* 黒系の見出し色に変更 */
     }
 
     footer {
-        background-color: #333333;
-        /* 黒系のフッター色に変更 */
+        background-color: #333333 !important;
         color: #FFFFFF;
+    }
+}
+
+/* アニメーション改善 */
+@media (prefers-reduced-motion: no-preference) {
+    .card {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .btn {
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+/* 印刷時の調整 */
+@media print {
+    .navbar,
+    .discord-widget,
+    iframe {
+        display: none !important;
+    }
+    
+    .card {
+        border: 1px solid #000 !important;
+        box-shadow: none !important;
+    }
+    
+    body {
+        background-color: white !important;
+        color: black !important;
     }
 }
