@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<article class="mb-5" data-aos="fade-up">
+    <header class="text-center mb-5">
+        <h1 class="display-4">{{ page.title }}</h1>
+        <p class="lead">{{ page.date | date: "%Y年%m月%d日" }}</p>
+        {% if page.categories %}
+        <p class="text-muted">カテゴリ: {{ page.categories | join: ', ' }}</p>
+        {% endif %}
+    </header>
+
+    <div class="card bg-secondary text-light">
+        <div class="card-body">
+            {{ content }}
+        </div>
+    </div>
+</article>

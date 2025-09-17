@@ -1,0 +1,30 @@
+title: netminn012のホームページ
+description: Discoedや旧Twitter、Scratchなどにいるただのネット民でーす
+url: "https://netminn012.github.io"
+baseurl: ""
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - .bundle
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
