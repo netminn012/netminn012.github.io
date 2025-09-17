@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YOU ARE RICKROLLED!!!</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark text-light text-center">
+  <div class="container my-5">
+    <h1 class="display-1 text-warning mb-4">You are rickrolled!!!!</h1>
+    <div class="row justify-content-center">
+      <div class="col-md-6 mb-3">
+        <img src="/assets/potter.webp" alt="釣られたな、ポッター" class="img-fluid rounded">
+      </div>
+      <div class="col-md-6 mb-3">
+        <div id="player" class="ratio ratio-16x9"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6 col-md-3 mb-3">
+        <img src="/assets/potter.webp" alt="釣られたな、ポッター" class="img-fluid rounded">
+      </div>
+      <div class="col-6 col-md-3 mb-3">
+        <img src="/assets/youareanidiot.gif" alt="You are an idiot" class="img-fluid rounded">
+      </div>
+      <div class="col-6 col-md-3 mb-3">
+        <img src="/assets/youareanidiot.gif" alt="You are an idiot" class="img-fluid rounded">
+      </div>
+      <div class="col-6 col-md-3 mb-3">
+        <img src="/assets/youareanidiot.gif" alt="You are an idiot" class="img-fluid rounded">
+      </div>
+      <div class="col-6 col-md-3 mb-3">
+        <img src="/assets/youareanidiot.gif" alt="You are an idiot" class="img-fluid rounded">
+      </div>
+      <div class="col-6 col-md-3 mb-3">
+        <img src="/assets/youareanidiot.gif" alt="You are an idiot" class="img-fluid rounded">
+      </div>
+      <div class="col-6 col-md-3 mb-3">
+        <img src="/assets/duckroll.png" alt="duckroll" class="img-fluid rounded">
+      </div>
+      <div class="col-6 col-md-3 mb-3">
+        <img src="/assets/duckroll.png" alt="くぁｗせｄｒｆｔｇｙふじこｌｐ" class="img-fluid rounded">
+      </div>
+      <div class="col-6 col-md-3 mb-3">
+        <img src="/assets/duckroll.png" alt="くぁｗせｄｒｆｔｇｙふじこｌｐ" class="img-fluid rounded">
+      </div>
+    </div>
+  </div>
+  <script>
+    // YouTubeのプレーヤーAPIを非同期に読み込む
+    var tag = document.createElement('script');
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var player;
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '100%',
+        width: '100%',
+        videoId: 'dQw4w9WgXcQ',
+        playerVars: {
+          'controls': 0,
+          'showinfo': 0,
+          'rel': 0,
+          'loop': 1
+        },
+        events: {
+          'onReady': onPlayerReady
+        }
+      });
+    }
+
+    function onPlayerReady(event) {
+      event.target.playVideo();
+    }
+  </script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
