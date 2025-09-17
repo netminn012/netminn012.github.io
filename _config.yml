@@ -1,30 +1,41 @@
-title: netminn012のホームページ
-description: Discoedや旧Twitter、Scratchなどにいるただのネット民でーす
-url: "https://netminn012.github.io"
-baseurl: ""
-markdown: kramdown
-highlighter: rouge
-plugins:
-  - jekyll-feed
-  - jekyll-sitemap
-  - jekyll-seo-tag
+name: Jekyll site CI
 
-# Collections
-collections:
-  posts:
-    output: true
-    permalink: /blog/:year/:month/:day/:title/
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
-# Exclude from processing
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - vendor/
-  - .bundle/
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
-  - .bundle
-  - .sass-cache
-  - .jekyll-cache
-  - gemfiles
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: '3.1'
+        bundler-cache: true
+    - name: Build with Jekyll
+      run: |
+        gem install jekyll bundler
+        bundle exec jekyll build
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./_site
+    
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
