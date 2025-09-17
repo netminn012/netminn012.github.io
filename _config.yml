@@ -1,41 +1,24 @@
-name: Jekyll site CI
+title: netminn012のホームページ
+description: Discoedや旧Twitter、Scratchなどにいるただのネット民でーす
+url: "https://netminn012.com"
+baseurl: ""
+markdown: kramdown
+highlighter: rouge
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+permalink: /blog/:year/:month/:day/:title/
 
-    steps:
-    - uses: actions/checkout@v4
-    - name: Setup Ruby
-      uses: ruby/setup-ruby@v1
-      with:
-        ruby-version: '3.1'
-        bundler-cache: true
-    - name: Build with Jekyll
-      run: |
-        gem install jekyll bundler
-        bundle exec jekyll build
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
-      with:
-        path: ./_site
-    
-  deploy:
-    needs: build
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - howtomemo.md
+  - netminn012.github.io.code-workspace
