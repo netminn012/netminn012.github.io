@@ -5,13 +5,13 @@ title: ホーム
 
 <header class="text-center mb-5" data-aos="fade-up">
     <h1 class="display-4">netminn012のホームページ</h1>
-    <p class="lead">Discoedや旧Twitter、Scratchなどにいるただのネット民でーす</p>
+    <p class="lead">Discordや旧Twitter、Scratchなどにいるただのネット民でーす</p>
 </header>
 
 <section class="mb-5" data-aos="fade-up" data-aos-delay="100">
     <h2 class="h3 mb-4">お知らせ</h2>
     <div class="news-grid">
-    <div class="card bg-secondary text-light" data-aos="zoom-in" data-aos-delay="200">
+        <div class="card bg-secondary text-light" data-aos="zoom-in" data-aos-delay="200">
             <div class="card-body">
                 <h5 class="card-title">サイトの大規模改修</h5>
                 <p class="card-text">2025年9月17日: 大規模な改修。ブログの追加、デザインのモダン化。だいぶ改善されました
@@ -33,8 +33,6 @@ title: ホーム
                 <p class="card-text">2025年4月28日: Artifact Actions v3の廃止に伴うワーカーの修正。まじで更新サボってすいません 許してください！！なんでもしますから(なんでももいいとは言っていない)</p>
                 <small class="text-muted">2025年4月28日</small>
             </div>
-        </div>
-        <div class="card bg-secondary text-light" data-aos="zoom-in" data-aos-delay="400">
         </div>
         <div class="card bg-secondary text-light" data-aos="zoom-in" data-aos-delay="500">
             <div class="card-body">
@@ -74,16 +72,17 @@ title: ホーム
                 </div>
             </div>
         </div>
-    </div>
-</div>
-    <div class="mt-4">
-        <iframe src="https://canary.discord.com/widget?id=1133998097597476915&theme=dark"
-                width="100%"
-                class="discord-widget"
-                allowtransparency="true"
-                frameborder="0"
-                sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
-        </iframe>
+        <div class="col-lg-4">
+            <div class="mt-4">
+                <iframe src="https://canary.discord.com/widget?id=1133998097597476915&theme=dark"
+                        width="100%"
+                        class="discord-widget"
+                        allowtransparency="true"
+                        frameborder="0"
+                        sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
+                </iframe>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -107,7 +106,6 @@ title: ホーム
                 <div class="card-body">
                     <h5 class="card-title">データ収集について</h5>
                     <p class="card-text">cloudflareのアナリティクスを使用しています。Googleアナリティクスは個人情報抜く53だからやめた</p>
-
                 </div>
             </div>
         </section>
