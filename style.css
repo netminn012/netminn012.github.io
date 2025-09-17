@@ -1,13 +1,26 @@
 /* ナビゲーションバー */
 .navbar {
-    background-color: #333333 !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #2a2a2a !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* ナビゲーションリンクの可視性向上 */
+.navbar-brand,
+.nav-link {
+    color: #f0f0f0 !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 5px;
 }
 
 /* カードコンポーネント */
 .card {
-    background-color: #333333 !important;
-    border: 1px solid #555555;
+    background-color: #2a2a2a !important;
+    border: 1px solid #3a3a3a;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%; /* カードの高さを統一 */
@@ -15,14 +28,26 @@
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
 .card-body {
-    color: #FFFFFF;
+    color: #e8e8e8;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+/* カードタイトルの強調 */
+.card-title {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+/* カードテキストの可読性向上 */
+.card-text {
+    color: #d0d0d0 !important;
+    line-height: 1.7;
 }
 
 /* ボタン */
@@ -30,10 +55,46 @@
     margin: 0.25rem;
     border-radius: 5px;
     transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .btn:hover {
     transform: scale(1.05);
+}
+
+/* プライマリボタンの可視性向上 */
+.btn-primary {
+    background-color: #4a90e2 !important;
+    border-color: #4a90e2 !important;
+    color: #ffffff !important;
+}
+
+.btn-primary:hover {
+    background-color: #357abd !important;
+    border-color: #357abd !important;
+}
+
+/* セカンダリボタンの可視性向上 */
+.btn-secondary {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+    color: #ffffff !important;
+}
+
+.btn-secondary:hover {
+    background-color: #545b62 !important;
+    border-color: #545b62 !important;
+}
+
+/* アウトラインボタンの改善 */
+.btn-outline-light {
+    color: #e8e8e8 !important;
+    border-color: #e8e8e8 !important;
+}
+
+.btn-outline-light:hover {
+    background-color: #e8e8e8 !important;
+    color: #1a1a1a !important;
 }
 
 /* iframe */
@@ -52,10 +113,15 @@ iframe {
 .display-4 {
     font-size: clamp(2rem, 5vw, 3.5rem);
     margin-bottom: 1.5rem;
+    color: #ffffff !important;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .lead {
     font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: #d0d0d0 !important;
+    font-weight: 400;
 }
 
 /* お知らせセクションのグリッド改善 */
@@ -221,8 +287,8 @@ iframe {
 body {
     font-family: 'Roboto', 'Arial', sans-serif;
     font-size: 16px;
-    background-color: #000000 !important;
-    color: #FFFFFF !important;
+    background-color: #1a1a1a !important;
+    color: #e8e8e8 !important;
     line-height: 1.6;
 }
 
@@ -277,10 +343,16 @@ body[data-theme="light"] .nav-link:hover {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    background-color: transparent !important;
+    border: 2px solid #e8e8e8 !important;
+    color: #e8e8e8 !important;
 }
 
 #themeToggle:hover {
     transform: scale(1.1);
+    background-color: rgba(232, 232, 232, 0.1) !important;
+    border-color: #ffffff !important;
+    color: #ffffff !important;
 }
 
 body[data-theme="light"] #themeToggle {
@@ -297,7 +369,7 @@ body[data-theme="light"] #themeToggle:hover {
     justify-content: center;
     margin-top: 1rem;
     padding-top: 1rem;
-    border-top: 1px solid #555555;
+    border-top: 1px solid #3a3a3a;
 }
 
 body[data-theme="light"] .navbar-collapse .d-flex {
@@ -334,10 +406,79 @@ body[data-theme="light"] .navbar-collapse .d-flex {
     }
 }
 
+/* 追加のダークモード可読性改善 */
+
+/* フッターの改善 */
+footer {
+    background-color: #2a2a2a !important;
+    color: #e8e8e8 !important;
+    border-top: 1px solid #3a3a3a;
+}
+
+/* リンクの可視性向上 */
+a {
+    color: #66b3ff !important;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #99ccff !important;
+    text-decoration: underline;
+}
+
+/* 小さなテキストの可読性向上 */
+small, .small {
+    color: #c0c0c0 !important;
+}
+
+/* 強調テキストの改善 */
+strong, b {
+    color: #ffffff !important;
+}
+
+/* コードブロックの改善 */
+code {
+    background-color: #333333 !important;
+    color: #e8e8e8 !important;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+pre {
+    background-color: #2a2a2a !important;
+    color: #e8e8e8 !important;
+    border: 1px solid #3a3a3a;
+    border-radius: 5px;
+}
+
+/* テーブルの改善 */
+.table-dark {
+    background-color: #2a2a2a !important;
+    color: #e8e8e8 !important;
+}
+
+.table-dark td, .table-dark th {
+    border-color: #3a3a3a !important;
+}
+
+/* フォームコントロールの改善 */
+.form-control {
+    background-color: #2a2a2a !important;
+    border-color: #3a3a3a !important;
+    color: #e8e8e8 !important;
+}
+
+.form-control:focus {
+    background-color: #333333 !important;
+    border-color: #4a90e2 !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25) !important;
+}
+
 /* ハンバーガーメニューのスタイリング */
 .navbar-toggler {
     border: none !important;
-    color: #FFFFFF !important;
+    color: #f0f0f0 !important;
     background-color: transparent !important;
 }
 
@@ -346,7 +487,7 @@ body[data-theme="light"] .navbar-collapse .d-flex {
 }
 
 .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28240, 240, 240, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
 /* ナビゲーションメニューを常に折りたたみ状態にする */
@@ -377,10 +518,10 @@ body[data-theme="light"] .navbar-collapse .d-flex {
         top: 100%;
         left: 0;
         right: 0;
-        background-color: #333333;
-        border: 1px solid #555555;
+        background-color: #2a2a2a;
+        border: 1px solid #3a3a3a;
         border-radius: 0 0 10px 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         z-index: 1000;
     }
     
@@ -396,9 +537,11 @@ body[data-theme="light"] .navbar-collapse .d-flex {
         padding: 0.75rem 1rem !important;
         border-radius: 5px;
         transition: background-color 0.3s ease;
+        color: #e8e8e8 !important;
     }
     
     .nav-link:hover {
-        background-color: #555555;
+        background-color: #3a3a3a;
+        color: #ffffff !important;
     }
 }
