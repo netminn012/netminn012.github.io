@@ -7,7 +7,7 @@
     <title>netminn012のホームページ</title>
     <link href="https://cdn.jsdelivr.net/npm/beercss@3.9.7/dist/cdn/beer.min.css" rel="stylesheet">
     <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.9.7/dist/cdn/beer.min.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
+
 </head>
 
 <body class="dark">
@@ -62,7 +62,7 @@
                 <p>2025年1月23日: cloudflareを導入した。</p>
             </div>
             <div class="field border label">
-                <p>2024年9月8日: 独自ドメインにしました! ドメインは <a href="http://netminn012.com" target="_blank">netminn012.com</a> です。</p>
+                <p>2024年9月8日: 独自ドメインにしました! ドメインは <a href="https://netminn012.com" target="_blank">netminn012.com</a> です。</p>
             </div>
             <div class="field border label">
                 <p>2024年6月4日: 近日中にホームページをリニューアルする予定です。時期は未定です 進捗状況聞きたいならDiscordのDMで教えます</p>
@@ -109,7 +109,12 @@
         // 独断と偏見で選んだ釣り動画をランダムに表示する
         const links = ["/roll.html", "/konngyo.mp3", "https://youtu.be/ZLcgsBAXNaQ?si=ye3lGMYpjRlvjmbr", "https://youtu.be/6W5xbyQUcWs?si=Go6CMO3Va7XQtWSb&t=58", "https://www.youtube.com/watch?v=NlKbg-1_7Bk", "https://www.nicovideo.jp/watch/sm41066862"];
         const randomLink = links[Math.floor(Math.random() * links.length)];
-        document.getElementById('random-link').innerHTML = '<a href="' + randomLink + '" target="_blank" class="chip fill">なにがでるかな</a>';
+        const linkElement = document.createElement('a');
+        linkElement.href = randomLink;
+        linkElement.target = '_blank';
+        linkElement.className = 'chip fill';
+        linkElement.textContent = 'なにがでるかな';
+        document.getElementById('random-link').appendChild(linkElement);
 
         // テーマ切り替え
         const themeToggle = document.getElementById('theme-toggle');
