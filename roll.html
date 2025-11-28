@@ -5,22 +5,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>YOU ARE RICKROLLED!!!</title>
+  <link href="https://cdn.jsdelivr.net/npm/beercss@3.9.7/dist/cdn/beer.min.css" rel="stylesheet">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.9.7/dist/cdn/beer.min.js"></script>
 </head>
 
-<body>
-  <h1>You are rickrolled!!!!</h1>
-  <img src="/assets/potter.webp" alt="釣られたな、ポッター">
-  <div id="player"></div>
-  <img src="/assets/potter.webp" alt="釣られたな、ポッター">
-  <img src="/assets/youareanidiot.gif" alt="You are an idiot">
-  <img src="/assets/youareanidiot.gif" alt="You are an idiot">
-  <img src="/assets/youareanidiot.gif" alt="You are an idiot">
-  <img src="/assets/youareanidiot.gif" alt="You are an idiot">
-  <img src="/assets/youareanidiot.gif" alt="You are an idiot">
-  <img src="/assets/youareanidiot.gif" alt="You are an idiot">
-  <img src="/assets/duckroll.png" alt="duckroll">
-  <img src="/assets/duckroll.png" alt="くぁｗせｄｒｆｔｇｙふじこｌｐ">
-  <img src="/assets/duckroll.png" alt="くぁｗせｄｒｆｔｇｙふじこｌｐ">
+<body class="dark">
+  <main class="responsive center-align">
+    <article class="error-container round large-padding">
+      <h1>You are rickrolled!!!!</h1>
+    </article>
+    <div class="space"></div>
+    <img src="/assets/potter.webp" alt="釣られたな、ポッター" class="responsive round">
+    <div class="space"></div>
+    <div id="player"></div>
+    <div class="space"></div>
+    <img src="/assets/potter.webp" alt="釣られたな、ポッター" class="responsive round">
+    <div class="space"></div>
+    <div class="grid">
+      <img src="/assets/youareanidiot.gif" alt="You are an idiot" class="s4">
+      <img src="/assets/youareanidiot.gif" alt="You are an idiot" class="s4">
+      <img src="/assets/youareanidiot.gif" alt="You are an idiot" class="s4">
+      <img src="/assets/youareanidiot.gif" alt="You are an idiot" class="s4">
+      <img src="/assets/youareanidiot.gif" alt="You are an idiot" class="s4">
+      <img src="/assets/youareanidiot.gif" alt="You are an idiot" class="s4">
+    </div>
+    <div class="space"></div>
+    <div class="grid">
+      <img src="/assets/duckroll.png" alt="duckroll" class="s4 responsive">
+      <img src="/assets/duckroll.png" alt="くぁｗせｄｒｆｔｇｙふじこｌｐ" class="s4 responsive">
+      <img src="/assets/duckroll.png" alt="くぁｗせｄｒｆｔｇｙふじこｌｐ" class="s4 responsive">
+    </div>
+  </main>
   <script>
     // YouTubeのプレーヤーAPIを非同期に読み込む
     var tag = document.createElement('script');
