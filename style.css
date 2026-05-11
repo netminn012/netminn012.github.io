@@ -1,547 +1,482 @@
-/* ナビゲーションバー */
-.navbar {
-    background-color: #2a2a2a !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+:root {
+  color-scheme: dark;
+  --bg-primary: #0d0e14;
+  --bg-secondary: #13141c;
+  --bg-tertiary: #1a1b26;
+  --border: rgba(255,255,255,0.08);
+  --text-primary: #e8e8e8;
+  --text-secondary: #888899;
+  --text-muted: #555566;
+  --accent-blue: #60a5fa;
+  --accent-cyan: #2dd4bf;
+  --discord-purple: #5865F2;
+  --container: 1100px;
+  --header-height: 64px;
 }
 
-/* ナビゲーションリンクの可視性向上 */
-.navbar-brand,
-.nav-link {
-    color: #f0f0f0 !important;
-    font-weight: 500;
+* {
+  box-sizing: border-box;
 }
 
-.nav-link:hover {
-    color: #ffffff !important;
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    border-radius: 5px;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
 }
 
-/* カードコンポーネント */
-.card {
-    background-color: #2a2a2a !important;
-    border: 1px solid #3a3a3a;
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%; /* カードの高さを統一 */
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-.card-body {
-    color: #e8e8e8;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-/* カードタイトルの強調 */
-.card-title {
-    color: #ffffff !important;
-    font-weight: 600;
-}
-
-/* カードテキストの可読性向上 */
-.card-text {
-    color: #d0d0d0 !important;
-    line-height: 1.7;
-}
-
-/* ボタン */
-.btn {
-    margin: 0.25rem;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-    font-weight: 500;
-}
-
-.btn:hover {
-    transform: scale(1.05);
-}
-
-/* プライマリボタンの可視性向上 */
-.btn-primary {
-    background-color: #4a90e2 !important;
-    border-color: #4a90e2 !important;
-    color: #ffffff !important;
-}
-
-.btn-primary:hover {
-    background-color: #357abd !important;
-    border-color: #357abd !important;
-}
-
-/* セカンダリボタンの可視性向上 */
-.btn-secondary {
-    background-color: #6c757d !important;
-    border-color: #6c757d !important;
-    color: #ffffff !important;
-}
-
-.btn-secondary:hover {
-    background-color: #545b62 !important;
-    border-color: #545b62 !important;
-}
-
-/* アウトラインボタンの改善 */
-.btn-outline-light {
-    color: #e8e8e8 !important;
-    border-color: #e8e8e8 !important;
-}
-
-.btn-outline-light:hover {
-    background-color: #e8e8e8 !important;
-    color: #1a1a1a !important;
-}
-
-/* iframe */
-iframe {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-/* コンテナ最大幅の調整 */
-.container {
-    max-width: 1200px;
-}
-
-/* ヘッダー調整 */
-.display-4 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    margin-bottom: 1.5rem;
-    color: #ffffff !important;
-    font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
-
-.lead {
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    color: #d0d0d0 !important;
-    font-weight: 400;
-}
-
-/* お知らせセクションのグリッド改善 */
-.news-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-/* Discord Widgetの調整 */
-.discord-widget {
-    min-height: 400px;
-}
-
-/* スマートフォン向け (320px - 767px) */
-@media (max-width: 767px) {
-    .container {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-    
-    .display-4 {
-        font-size: 2rem;
-    }
-    
-    .lead {
-        font-size: 1rem;
-    }
-    
-    .navbar-nav {
-        text-align: center;
-    }
-    
-    .discord-widget {
-        min-height: 300px;
-    }
-    
-    /* ナビゲーションリンクを2列に */
-    .navbar-nav {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.5rem;
-        width: 100%;
-    }
-}
-
-/* タブレット向け (768px - 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .container {
-        max-width: 100%;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-    
-    .display-4 {
-        font-size: 3rem;
-    }
-    
-    /* お知らせを2列に */
-    .news-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    /* ナビゲーションの調整 */
-    .navbar-nav .nav-item {
-        margin: 0 0.25rem;
-    }
-    
-    .navbar-nav .nav-link {
-        font-size: 0.9rem;
-        padding: 0.375rem 0.5rem;
-    }
-    
-    /* Discord Widget調整 */
-    .discord-widget {
-        min-height: 450px;
-    }
-    
-    /* カードのpadding調整 */
-    .card-body {
-        padding: 1.25rem;
-    }
-}
-
-/* デスクトップ向け (1024px以上) */
-@media (min-width: 1024px) {
-    .container {
-        max-width: 1200px;
-    }
-    
-    .display-4 {
-        font-size: 3.5rem;
-        margin-bottom: 2rem;
-    }
-    
-    .lead {
-        font-size: 1.5rem;
-    }
-    
-    /* お知らせを3列に */
-    .news-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
-    }
-    
-    /* セクションマージンの調整 */
-    .mb-5 {
-        margin-bottom: 4rem !important;
-    }
-    
-    /* ナビゲーションの間隔調整 */
-    .navbar-nav .nav-item {
-        margin: 0 0.5rem;
-    }
-    
-    /* Discord Widget最大化 */
-    .discord-widget {
-        min-height: 500px;
-    }
-    
-    /* カードホバー効果強化 */
-    .card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    }
-}
-
-/* 大型デスクトップ向け (1440px以上) */
-@media (min-width: 1440px) {
-    .container {
-        max-width: 1400px;
-    }
-    
-    .display-4 {
-        font-size: 4rem;
-    }
-    
-    /* さらに大きな画面では4列に */
-    .news-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-    
-    /* セクション間の余白を広げる */
-    .mb-5 {
-        margin-bottom: 5rem !important;
-    }
-}
-
-/* 超ワイド画面向け (1920px以上) */
-@media (min-width: 1920px) {
-    .container {
-        max-width: 1600px;
-    }
-    
-    /* コンテンツを中央により集約 */
-    .row {
-        justify-content: center;
-    }
-}
-
-/* テーマ切り替え機能 */
-/* ダークテーマ（デフォルト） */
 body {
-    font-family: 'Roboto', 'Arial', sans-serif;
-    font-size: 16px;
-    background-color: #1a1a1a !important;
-    color: #e8e8e8 !important;
-    line-height: 1.6;
+  margin: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  min-width: 320px;
 }
 
-/* ライトテーマ */
-body[data-theme="light"] {
-    background-color: #FFFFFF !important;
-    color: #000000 !important;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-body[data-theme="light"] .navbar {
-    background-color: #F8F9FA !important;
+img,
+svg,
+iframe {
+  max-width: 100%;
 }
 
-body[data-theme="light"] .navbar-brand,
-body[data-theme="light"] .nav-link {
-    color: #000000 !important;
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
-body[data-theme="light"] .card {
-    background-color: #F8F9FA !important;
-    border-color: #DEE2E6 !important;
+.container {
+  width: min(100% - 48px, var(--container));
+  margin: 0 auto;
 }
 
-body[data-theme="light"] .card-body {
-    color: #000000 !important;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-body[data-theme="light"] footer {
-    background-color: #F8F9FA !important;
-    color: #000000 !important;
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  background: rgba(13,14,20,0.85);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
-body[data-theme="light"] .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+.site-nav {
+  min-height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  position: relative;
 }
 
-body[data-theme="light"] .navbar-collapse {
-    background-color: #F8F9FA !important;
-    border-color: #DEE2E6 !important;
+.brand {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
-body[data-theme="light"] .nav-link:hover {
-    background-color: #E9ECEF !important;
+.nav-links {
+  display: none;
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  right: 0;
+  padding: 12px;
+  background: rgba(13,14,20,0.96);
+  border: 1px solid var(--border);
+  border-radius: 0 0 14px 14px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.28);
 }
 
-/* テーマ切り替えボタンのスタイル */
-#themeToggle {
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
+.nav-links.is-open {
+  display: grid;
+  gap: 6px;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 12px;
+  border-radius: 10px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--text-primary);
+  background: var(--bg-tertiary);
+}
+
+.menu-toggle {
+  width: 42px;
+  height: 42px;
+  display: inline-grid;
+  place-items: center;
+  gap: 4px;
+  padding: 10px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.menu-toggle span:not(.sr-only) {
+  width: 18px;
+  height: 2px;
+  display: block;
+  background: var(--text-primary);
+  border-radius: 999px;
+}
+
+.hero {
+  min-height: 420px;
+  padding: 128px 0 80px;
+  display: grid;
+  align-items: center;
+  background: var(--bg-primary);
+  text-align: center;
+}
+
+.hero__inner {
+  max-width: 760px;
+}
+
+.eyebrow,
+.section-label {
+  margin: 0 0 10px;
+  color: var(--accent-cyan);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.hero__lead {
+  margin: 18px auto 0;
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.section {
+  padding: 48px 0;
+}
+
+.section-heading {
+  margin-bottom: 28px;
+}
+
+.section-heading--center {
+  text-align: center;
+}
+
+.section-heading h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.6rem, 4vw, 2.25rem);
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+.section-heading h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  margin-top: 12px;
+  background: var(--accent-cyan);
+  border-radius: 999px;
+}
+
+.section-heading--center h2::after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.link-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+}
+
+.link-card,
+.news-card,
+.info-card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+}
+
+.link-card {
+  min-height: 148px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 6px;
+  padding: 20px 16px;
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+  transition: all 0.2s ease;
+}
+
+.link-card:hover,
+.link-card:focus-visible {
+  background: var(--bg-tertiary);
+  border-color: rgba(96,165,250,0.3);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.link-card__icon {
+  width: 36px;
+  height: 36px;
+  display: inline-grid;
+  place-items: center;
+  margin-bottom: 6px;
+  color: var(--accent-blue);
+  background: rgba(96,165,250,0.1);
+  border: 1px solid rgba(96,165,250,0.18);
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.link-card__name {
+  color: #fff;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.link-card__handle {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.news-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.news-card {
+  padding: 20px;
+  border-radius: 10px;
+  overflow-wrap: anywhere;
+}
+
+.news-card time {
+  display: inline-block;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.news-card h3 {
+  margin: 8px 0 4px;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.news-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.discord-card {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  text-align: center;
+  color: #fff;
+  background: var(--discord-purple);
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(88,101,242,0.24);
+}
+
+.discord-logo {
+  width: 40px;
+  height: auto;
+  color: #fff;
+}
+
+.discord-card h3 {
+  margin: 16px 0 8px;
+  font-size: 1.35rem;
+  line-height: 1.4;
+}
+
+.discord-card p {
+  margin: 0 auto;
+  color: rgba(255,255,255,0.86);
+  max-width: 420px;
+}
+
+.discord-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 22px;
+  padding: 10px 18px;
+  border: 1px solid rgba(255,255,255,0.86);
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.discord-button:hover,
+.discord-button:focus-visible {
+  background: #fff;
+  color: var(--discord-purple);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.discord-widget-wrap {
+  max-width: 520px;
+  margin: 18px auto 0;
+}
+
+.discord-widget {
+  display: block;
+  width: 100%;
+  height: 300px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg-secondary);
+}
+
+.info-grid {
+  display: grid;
+  gap: 12px;
+}
+
+.info-card {
+  padding: 22px;
+  border-radius: 12px;
+  overflow-wrap: anywhere;
+}
+
+.info-card h3 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.info-card p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.info-card a {
+  display: inline-flex;
+  margin-top: 14px;
+  color: var(--accent-blue);
+  font-weight: 600;
+}
+
+.info-card a:hover,
+.info-card a:focus-visible {
+  color: var(--accent-cyan);
+}
+
+.site-footer {
+  padding: 32px 24px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.site-footer p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+@media (min-width: 600px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 760px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
     display: flex;
     align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    background-color: transparent !important;
-    border: 2px solid #e8e8e8 !important;
-    color: #e8e8e8 !important;
+    gap: 4px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .nav-links a {
+    padding: 8px 10px;
+  }
+
+  .hero {
+    padding: 144px 0 80px;
+  }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .info-card--wide {
+    grid-column: 1 / -1;
+  }
 }
 
-#themeToggle:hover {
-    transform: scale(1.1);
-    background-color: rgba(232, 232, 232, 0.1) !important;
-    border-color: #ffffff !important;
-    color: #ffffff !important;
-}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 
-body[data-theme="light"] #themeToggle {
-    border-color: #000000 !important;
-    color: #000000 !important;
-}
-
-body[data-theme="light"] #themeToggle:hover {
-    background-color: #E9ECEF !important;
-}
-
-/* メニュー内でのテーマボタンの調整 */
-.navbar-collapse .d-flex {
-    justify-content: center;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid #3a3a3a;
-}
-
-body[data-theme="light"] .navbar-collapse .d-flex {
-    border-top-color: #DEE2E6;
-}
-
-/* アニメーション改善 */
-@media (prefers-reduced-motion: no-preference) {
-    .card {
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .btn {
-        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-}
-
-/* 印刷時の調整 */
-@media print {
-    .navbar,
-    .discord-widget,
-    iframe {
-        display: none !important;
-    }
-    
-    .card {
-        border: 1px solid #000 !important;
-        box-shadow: none !important;
-    }
-    
-    body {
-        background-color: white !important;
-        color: black !important;
-    }
-}
-
-/* 追加のダークモード可読性改善 */
-
-/* フッターの改善 */
-footer {
-    background-color: #2a2a2a !important;
-    color: #e8e8e8 !important;
-    border-top: 1px solid #3a3a3a;
-}
-
-/* リンクの可視性向上 */
-a {
-    color: #66b3ff !important;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #99ccff !important;
-    text-decoration: underline;
-}
-
-/* 小さなテキストの可読性向上 */
-small, .small {
-    color: #c0c0c0 !important;
-}
-
-/* 強調テキストの改善 */
-strong, b {
-    color: #ffffff !important;
-}
-
-/* コードブロックの改善 */
-code {
-    background-color: #333333 !important;
-    color: #e8e8e8 !important;
-    padding: 2px 4px;
-    border-radius: 3px;
-}
-
-pre {
-    background-color: #2a2a2a !important;
-    color: #e8e8e8 !important;
-    border: 1px solid #3a3a3a;
-    border-radius: 5px;
-}
-
-/* テーブルの改善 */
-.table-dark {
-    background-color: #2a2a2a !important;
-    color: #e8e8e8 !important;
-}
-
-.table-dark td, .table-dark th {
-    border-color: #3a3a3a !important;
-}
-
-/* フォームコントロールの改善 */
-.form-control {
-    background-color: #2a2a2a !important;
-    border-color: #3a3a3a !important;
-    color: #e8e8e8 !important;
-}
-
-.form-control:focus {
-    background-color: #333333 !important;
-    border-color: #4a90e2 !important;
-    color: #ffffff !important;
-    box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25) !important;
-}
-
-/* ハンバーガーメニューのスタイリング */
-.navbar-toggler {
-    border: none !important;
-    color: #f0f0f0 !important;
-    background-color: transparent !important;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none !important;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28240, 240, 240, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
-}
-
-/* ナビゲーションメニューを常に折りたたみ状態にする */
-.navbar-collapse {
-    display: none !important;
-}
-
-.navbar-collapse.show {
-    display: block !important;
-}
-
-/* モバイルメニューのスタイリング */
-@media (max-width: 767px) {
-    .navbar-nav {
-        text-align: center;
-        padding: 1rem 0;
-    }
-    
-    .nav-item {
-        margin: 0.5rem 0;
-    }
-}
-
-/* PC等でのハンバーガーメニュースタイリング */
-@media (min-width: 768px) {
-    .navbar-collapse {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background-color: #2a2a2a;
-        border: 1px solid #3a3a3a;
-        border-radius: 0 0 10px 10px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        z-index: 1000;
-    }
-    
-    .navbar-nav {
-        padding: 1rem;
-    }
-    
-    .nav-item {
-        margin: 0.25rem 0;
-    }
-    
-    .nav-link {
-        padding: 0.75rem 1rem !important;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-        color: #e8e8e8 !important;
-    }
-    
-    .nav-link:hover {
-        background-color: #3a3a3a;
-        color: #ffffff !important;
-    }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
 }
