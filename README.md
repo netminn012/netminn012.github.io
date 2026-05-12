@@ -2,4 +2,11 @@
 
 めっちゃ軽いホームページ
 
-Jekyllやビルドツールは使わず、`index.html` / `style.css` の静的HTML・CSS・JavaScriptだけで構成しています。
+## 構成
+
+Jekyllやビルドツールは使わず、プレーンなHTML/CSS/JavaScriptだけで構成しています。
+
+- `index.html`: トップページ
+- `style.css`: サイト全体のスタイル
+- `script.js`: モバイルメニューの開閉
+- `assets/`: 画像などの静的アセット
