@@ -1,11 +1,13 @@
 ---
-import type { LinkItem } from '../data/links'; import Icon from './Icon.astro'; import LiquidGlass from './LiquidGlass.astro';
-interface Props { item:LinkItem; index:number }
-const {item,index}=Astro.props;
+import type { LinkItem } from '../data/links';
+import Icon from './Icon.astro';
+
+interface Props { item: LinkItem }
+const { item } = Astro.props;
 ---
-<LiquidGlass class={`main-link-shell ${item.featured?'main-link-shell--featured':''}`} strength={item.featured?28:20} interactive>
- <a class="main-link" href={item.url} target="_blank" rel="noopener noreferrer">
-  <span class="main-link__index" aria-hidden="true">0{index+1}</span><span class="main-link__icon"><Icon name={item.icon} size={28}/></span>
-  <span class="main-link__copy"><strong>{item.name}</strong><span>{item.description}</span></span><span class="external-arrow" aria-hidden="true">↗</span>
- </a>
-</LiquidGlass>
+
+<a class:list={['main-link', { 'main-link--featured': item.featured }]} href={item.url} target="_blank" rel="noopener noreferrer">
+  <span class="link-icon"><Icon name={item.icon} size={24} /></span>
+  <span class="link-copy"><strong>{item.name}</strong><span>{item.description}</span></span>
+  <span class="external-arrow" aria-hidden="true">↗</span>
+</a>
