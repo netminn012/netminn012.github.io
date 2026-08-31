@@ -1,12 +1,19 @@
-# netminn012.github.io
+# netminn012.com
 
-めっちゃ軽いホームページ
+netminn012の主要なSNS、ブログ、運営サイトをまとめた1ページのリンク集です。
 
-## 構成
+## 開発
 
-Jekyllやビルドツールは使わず、プレーンなHTML/CSS/JavaScriptだけで構成しています。
+```sh
+npm ci --include=optional
+npm run dev
+```
 
-- `index.html`: トップページ
-- `style.css`: サイト全体のスタイル
-- `script.js`: モバイルメニューの開閉
-- `assets/`: 画像などの静的アセット
+Astro、TypeScript、CSSで構成し、GitHub Pagesへ静的出力をデプロイします。
+
+Codespacesでnative bindingのエラーが出た場合は、以前の依存関係を削除して入れ直してください。
+
+```sh
+rm -rf node_modules
+npm ci --include=optional
+```

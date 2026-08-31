@@ -1,0 +1,6 @@
+---
+import type { SiteItem } from '../data/links'; import Icon from './Icon.astro'; interface Props {item:SiteItem} const {item}=Astro.props;
+---
+<a class="site-row" href={item.url} target={item.external?'_blank':undefined} rel={item.external?'noopener noreferrer':undefined}>
+ <span class="site-row__icon"><Icon name={item.icon}/></span><span class="site-row__copy"><strong>{item.name}</strong><span>{item.description}</span></span><span class="site-row__url">{item.displayUrl}</span>{item.external&&<span class="external-arrow" aria-hidden="true">↗</span>}
+</a>
