@@ -99,7 +99,6 @@ const nav = document.querySelector<HTMLElement>('#floating-nav');
 const indicator = nav?.querySelector<HTMLElement>('.nav-liquid-indicator');
 const items = nav ? [...nav.querySelectorAll<HTMLElement>('[data-nav-item]')] : [];
 const topThemeButton = document.querySelector<HTMLButtonElement>('#theme-toggle');
-const navThemeButton = nav?.querySelector<HTMLButtonElement>('[data-theme-action]');
 const colorQuery = matchMedia('(prefers-color-scheme: light)');
 let activeIndex = 0;
 let activeAnimation: Animation | null = null;
@@ -111,7 +110,6 @@ function applyTheme(theme: 'light' | 'dark') {
   document.documentElement.style.colorScheme = theme;
   const label = `${theme === 'dark' ? 'ライト' : 'ダーク'}テーマに切り替える`;
   topThemeButton?.setAttribute('aria-label', label);
-  navThemeButton?.setAttribute('aria-label', label);
 }
 
 function toggleTheme() {
@@ -175,10 +173,6 @@ function updateFromScroll() {
 }
 
 items.forEach((item, index) => {
-  if (item.dataset.themeAction !== undefined) {
-    item.addEventListener('click', () => { suppressSpyUntil = performance.now() + 650; setActive(index); toggleTheme(); });
-    return;
-  }
   item.addEventListener('click', event => {
     const sectionId = item.dataset.section;
     const section = sectionId ? document.getElementById(sectionId) : null;
