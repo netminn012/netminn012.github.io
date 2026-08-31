@@ -162,7 +162,14 @@ function setActive(index: number, animate = true) {
 function updateFromScroll() {
   scrollQueued = false;
   if (performance.now() < suppressSpyUntil) return;
-  const marker = scrollY + innerHeight * .32;
+  const page = document.documentElement;
+  const isAtPageEnd = scrollY + innerHeight >= page.scrollHeight - 4;
+  if (isAtPageEnd) {
+    const lastSectionIndex = items.findLastIndex(item => Boolean(item.dataset.section));
+    if (lastSectionIndex >= 0 && lastSectionIndex !== activeIndex) setActive(lastSectionIndex);
+    return;
+  }
+  const marker = scrollY + innerHeight * .5;
   let nextIndex = 0;
   items.forEach((item, index) => {
     const sectionId = item.dataset.section;
