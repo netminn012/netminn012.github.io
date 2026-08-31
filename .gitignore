@@ -3,3 +3,6 @@ _site/
 .sass-cache/
 .bundle/
 vendor/
+node_modules/
+dist/
+.astro/

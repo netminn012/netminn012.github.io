@@ -1,0 +1,7 @@
+---
+import type { IconName } from '../data/links';
+interface Props { name:IconName; size?:number }
+const { name, size=24 } = Astro.props;
+const labels:Record<IconName,string>={discord:'Discord',github:'GitHub',x:'X',youtube:'YouTube',hatena:'B!',scratch:'S',note:'note',qiita:'Q',site:'◎'};
+---
+<span class:list={['service-icon',`service-icon--${name}`]} style={`--icon-size:${size}px`} aria-hidden="true">{labels[name]}</span>
