@@ -1,5 +1,6 @@
 ---
 import Footer from '../components/Footer.astro';
+import FloatingNav from '../components/FloatingNav.astro';
 import Icon from '../components/Icon.astro';
 import LinkButton from '../components/LinkButton.astro';
 import SiteCard from '../components/SiteCard.astro';
@@ -65,7 +66,7 @@ const ogImage = new URL('/og-image.png', Astro.site);
         <div><h1 id="hero-title">netminn012</h1><p>ツイ廃学生 自称ガジェット界隈</p></div>
       </section>
 
-      <section class="section" aria-labelledby="main-title">
+      <section class="section" id="links" aria-labelledby="main-title">
         <header class="section-heading"><h2 id="main-title">メインリンク</h2><p>よく使っているサービス</p></header>
         <div class="link-list main-link-list">{mainLinks.map(item => <LinkButton item={item} />)}</div>
       </section>
@@ -77,28 +78,16 @@ const ogImage = new URL('/og-image.png', Astro.site);
         </div>
       </section>
 
-      <section class="section" aria-labelledby="sites-title">
+      <section class="section" id="sites" aria-labelledby="sites-title">
         <header class="section-heading"><h2 id="sites-title">運営しているサイト</h2><p>個人で管理しているWebサイト</p></header>
         <div class="link-list sites-list">{operatedSites.map(item => <SiteCard item={item} />)}</div>
       </section>
     </main>
     <div class="page"><Footer /></div>
+    <FloatingNav />
 
     <script>
-      const key = 'netminn012-theme';
-      const toggle = document.querySelector<HTMLButtonElement>('#theme-toggle');
-      const query = matchMedia('(prefers-color-scheme: light)');
-      const apply = (theme: 'light' | 'dark') => {
-        document.documentElement.dataset.theme = theme;
-        document.documentElement.style.colorScheme = theme;
-        toggle?.setAttribute('aria-label', `${theme === 'dark' ? 'ライト' : 'ダーク'}テーマに切り替える`);
-      };
-      toggle?.addEventListener('click', () => {
-        const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
-        apply(next); try { localStorage.setItem(key, next); } catch {}
-      });
-      query.addEventListener('change', event => { try { if (localStorage.getItem(key)) return; } catch {} apply(event.matches ? 'light' : 'dark'); });
-      apply(document.documentElement.dataset.theme === 'light' ? 'light' : 'dark');
+      import '../lib/floating-nav';
     </script>
   </body>
 </html>
