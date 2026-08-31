@@ -5,12 +5,13 @@ import Icon from '../components/Icon.astro';
 import LinkButton from '../components/LinkButton.astro';
 import SiteCard from '../components/SiteCard.astro';
 import { mainLinks, operatedSites, otherLinks } from '../data/links';
+import { siteContent } from '../data/site';
 import '../styles/global.css';
 
-const title = 'netminn012';
-const description = 'netminn012のホームページ・リンク集';
+const title = siteContent.name;
+const description = siteContent.metaDescription;
 const canonical = new URL('/', Astro.site);
-const ogImage = new URL('/og-image.png', Astro.site);
+const ogImage = new URL(siteContent.ogImage, Astro.site);
 ---
 
 <!doctype html>
@@ -52,7 +53,7 @@ const ogImage = new URL('/og-image.png', Astro.site);
     <a class="skip-link" href="#main-content">本文へ移動</a>
     <header class="top-app-bar">
       <div class="top-app-bar__inner">
-        <a class="brand" href="#top">netminn012</a>
+        <a class="brand" href="#top">{siteContent.name}</a>
         <button class="theme-toggle" id="theme-toggle" type="button" aria-label="ライトテーマに切り替える">
           <svg class="sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.5 1.5M17.6 17.6l1.5 1.5M2 12h2M20 12h2M4.9 19.1l1.5-1.5M17.6 6.4l1.5-1.5"/></svg>
           <svg class="moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.4 15.1A8.5 8.5 0 0 1 8.9 3.6a8.5 8.5 0 1 0 11.5 11.5Z"/></svg>
@@ -62,24 +63,24 @@ const ogImage = new URL('/og-image.png', Astro.site);
 
     <main id="main-content" class="page">
       <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="avatar" aria-hidden="true"><img src="/profile.jpg" alt="" width="128" height="128" decoding="async" /></div>
-        <div><h1 id="hero-title">netminn012</h1><p>ツイ廃学生 自称ガジェット界隈</p></div>
+        <div class="avatar" aria-hidden="true"><img src={siteContent.profileImage} alt="" width="128" height="128" decoding="async" /></div>
+        <div><h1 id="hero-title">{siteContent.name}</h1><p>{siteContent.tagline}</p></div>
       </section>
 
       <section class="section" id="links" aria-labelledby="main-title">
-        <header class="section-heading"><h2 id="main-title">メインリンク</h2><p>よく使っているサービス</p></header>
+        <header class="section-heading"><h2 id="main-title">{siteContent.sections.main.title}</h2><p>{siteContent.sections.main.description}</p></header>
         <div class="link-list main-link-list">{mainLinks.map(item => <LinkButton item={item} />)}</div>
       </section>
 
       <section class="section" aria-labelledby="other-title">
-        <header class="section-heading"><h2 id="other-title">その他のリンク</h2><p>アカウントと投稿サービス</p></header>
+        <header class="section-heading"><h2 id="other-title">{siteContent.sections.other.title}</h2><p>{siteContent.sections.other.description}</p></header>
         <div class="link-list compact-list">
           {otherLinks.map(item => <a class="compact-link" href={item.url} target="_blank" rel="noopener noreferrer"><span class="link-icon"><Icon name={item.icon} size={21}/></span><span class="link-copy"><strong>{item.name}</strong><span>{item.description}</span></span><span class="external-arrow" aria-hidden="true">↗</span></a>)}
         </div>
       </section>
 
       <section class="section" id="sites" aria-labelledby="sites-title">
-        <header class="section-heading"><h2 id="sites-title">運営しているサイト</h2><p>個人で管理しているWebサイト</p></header>
+        <header class="section-heading"><h2 id="sites-title">{siteContent.sections.sites.title}</h2><p>{siteContent.sections.sites.description}</p></header>
         <div class="link-list sites-list">{operatedSites.map(item => <SiteCard item={item} />)}</div>
       </section>
     </main>
