@@ -78,7 +78,8 @@ button { font: inherit; }
 .main-link--featured:hover { background: color-mix(in srgb, var(--primary-container) 88%, var(--on-primary-container)); }
 .link-icon, .site-row__icon { display: grid; width: 44px; height: 44px; place-items: center; color: var(--on-secondary-container); background: var(--secondary-container); border-radius: 50%; }
 .main-link--featured .link-icon { color: var(--on-primary); background: var(--primary); }
-.service-icon { display: grid; width: var(--icon-size); height: var(--icon-size); place-items: center; font-size: calc(var(--icon-size) * .48); font-weight: 800; letter-spacing: -.08em; }
+.service-icon { display: grid; width: var(--icon-size); height: var(--icon-size); flex: 0 0 var(--icon-size); place-items: center; }
+.service-icon svg { display: block; width: 100%; height: 100%; fill: currentColor; }
 .service-icon--youtube { color: #ff4655; }
 .service-icon--discord { color: #9aa2ff; }
 [data-theme="light"] .service-icon--discord { color: #5865f2; }
